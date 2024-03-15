@@ -45,7 +45,7 @@ nav a {
 }
 
 nav a.active, nav a:hover {
-    color: #04c;
+    color: gold;
 }
 
 .hero { 
