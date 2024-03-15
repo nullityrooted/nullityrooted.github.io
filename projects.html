@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Eric's Portfolio</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric's Portfolio - Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-            <a href="about.html"><i class="fa-solid fa-user"></i> About Me</a>
-            <a href="projects.html"><i class="fa-solid fa-folder-plus"></i></i> Projects</a>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="projects.html" class="active"><i class="fa-solid fa-folder-plus"></i> Projects</a>
+        <a href="about.html"><i class="fa-solid fa-user"></i> About Me</a>
+    </nav>
+</header>
 
-    <div id="about" class="container">
-        <h2>Projects</h2>
-        <p>Some of my most recent projects.</p>
+<div class="container">
+    <h2>Projects</h2>
+    <p>Some of my most recent projects.</p>
+    <div class="projects-grid">
+        <!-- Repeat this block for each project -->
+        <a href="project-link.html" class="project-item">
+            <img src="path-to-project-image.jpg" alt="Project Image Description">
+            <div class="project-info">
+                <h3>WiFi QR Code Generator</h3>
+                <p>A QR code generator for easily connecting to WiFi networks.</p>
+            </div>
+        </a>
+        <!-- More project items here -->
     </div>
+</div>
 
-    <div id="contact" class="container">
-        <h2>Contact</h2>
-        <p>Connect with me on social media:</p>
-        <a href="https://www.linkedin.com/in/mr-e-lee/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><br>
-        <a href="https://github.com/nullityrooted" target="_blank"><i class="fab fa-github"></i> GitHub</a><br>
-    </div>
-    
-    <footer class="footer">
-        Eric's Portfolio © 2024
-    </footer>
-    
+<footer class="footer">
+    Eric's Portfolio © 2024
+</footer>
+
 </body>
 </html>

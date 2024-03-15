@@ -1,5 +1,9 @@
-body { 
-    font-family: Arial, sans-serif; margin: 0; padding: 0; 
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 #contact a{
@@ -7,8 +11,11 @@ body {
     text-decoration: none;
 }
 
+/* Container for content */
 .container {
-    max-width: 1200px; margin: auto; padding: 20px; 
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
     
 header { 
@@ -23,6 +30,24 @@ header nav a {
     color: #fff; text-decoration: none; 
 }
 
+/* Styling for navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #333;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a.active, nav a:hover {
+    color: #04c;
+}
+
 .hero { 
     text-align: center; padding: 50px 20px; 
 }
@@ -35,10 +60,40 @@ header nav a {
     padding: 40px 20px; 
 }
 
-.project-item {
-    margin-bottom: 20px; 
+/* Projects grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
+.project-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project-info h3 {
+    margin-top: 0;
+}
+
+/* Footer styling */
 .footer {
-    background: #f4f4f4; text-align: center; padding: 20px 0; 
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
 }
