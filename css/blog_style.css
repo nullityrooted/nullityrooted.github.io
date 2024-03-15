@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.blog-header, .site-footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.blog-header h1, .site-footer p {
+    margin: 0;
+}
+
+.blog-header nav a, .blog-post a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.blog-post {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.blog-post > header, .blog-post > footer {
+    margin-bottom: 20px;
+}
+
+.post-meta span {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.post-content {
+    margin-top: 20px;
+}
