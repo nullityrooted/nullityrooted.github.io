@@ -48,7 +48,7 @@ h2, label, select, input[type="text"], input[type="password"], button {
 .toggle-password {
     position: absolute;
     right: 10px;
-    top: 40px; /* Adjusted for consistency */
+    top: 60px; /* Adjusted for consistency */
     cursor: pointer;
 }
 
