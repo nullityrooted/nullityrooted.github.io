@@ -34,7 +34,7 @@ h2, label, select, input[type="text"], input[type="password"], button {
     display: block;
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc; /* Light mode border */
+    border: 2px solid #ccc; /* Light mode border */
     border-radius: 4px;
     box-sizing: border-box;
     background-color: #fff; /* Light mode background */
