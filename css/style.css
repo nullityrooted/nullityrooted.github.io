@@ -35,6 +35,10 @@ h2 {
     padding: 20px;
 }
 
+h3 {
+    color: gold;
+}
+
 /* Paragraph Styling */
 
 p {
@@ -125,6 +129,7 @@ nav a.active, nav a:hover {
 }
 
 .project-info {
+    background-color: #333;
     padding: 15px;
 }
 
