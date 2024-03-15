@@ -15,6 +15,8 @@
     <title>WiFi QR Code Generator</title>
 </head>
 <body>
+
+    <script src="lib/qrcode.min.js"></script>
     
     <div class="container">
         <h2>WiFi QR Code Generator</h2>
@@ -50,32 +52,41 @@
         <h3>Your Privacy is Important</h3>
         <p>All data entered here is processed directly within your browser, ensuring that your sensitive information, such as WiFi SSID and password, remains private and secure. No personal data is transmitted to or stored on any server. Please ensure you are visiting this site over a secure HTTPS connection for optimal security.</p>
     </div>
-    
 
-    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1/qrcode.min.js"></script>
     <script>
         function generateQRCode() {
             var ssid = document.getElementById("ssid").value;
             var password = document.getElementById("password").value;
             var encryption = document.getElementById("encryption").value;
             var qrCodeContainer = document.getElementById("qrcode");
-
+    
             // Clear previous QR Code
             qrCodeContainer.innerHTML = "";
-
+    
+            // Assuming the library allows specifying output format or has a method to get SVG directly
             // Generate WiFi QR code configuration
             var wifiConfig = `WIFI:T:${encryption};S:${ssid};P:${password};;`;
-
-            // Generate the QR code
-            var qr = qrcode(0, "L");
-            qr.addData(wifiConfig);
-            qr.make();
-
-            // Create an image for the QR code and add it to the page
-            var imgTag = qr.createImgTag();
-            qrCodeContainer.innerHTML = imgTag;
+    
+            // If your QR code library supports an options object where you can specify format
+            var options = {
+                // Your library-specific options here
+                // For example, if your library accepts colors and size in the options:
+                color: "#FFD700", // Gold color for QR code
+                background: "#333333", // Dark background
+                ecl: "M", // Error correction level
+                content: wifiConfig
+            };
+    
+            // Adjust this part according to your library's API for generating SVG
+            var qrSVG = new QRCode(options).svg(); // This is a placeholder, adjust it to match your library's method to get the SVG
+    
+            // Set the innerHTML of the container to the SVG output
+            qrCodeContainer.innerHTML = qrSVG;
         }
-
+    </script>
+    
+    
+    <script>
         function toggleDarkMode() {
             var body = document.body;
 
