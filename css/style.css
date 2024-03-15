@@ -153,6 +153,31 @@ main {
     flex: 1;
 }
 
+.blog-posts {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.post {
+    margin-bottom: 20px;
+}
+
+.post h3 a {
+    color: #333; /* Adjust based on your color scheme */
+    text-decoration: none; /* Removes underline */
+}
+
+.post p {
+    color: gold; /* Lighter text color for description */
+}
+
+.post a {
+    color: orange; /* Color for 'Read more' link */
+}
+
+
 .footer {
     text-align: center;
     padding: 20px;
