@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi QR Code Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label, select, input[type="text"], input[type="password"], button {
+            margin-bottom: 10px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+            width: 50%; /* Adjusted width for QR code */
+        }
+
+        #qrcode img {
+            width: 100%; /* Adjusted image width */
+            height: auto;
+        }
+
+        .toggle-dark-mode {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Adjusted dark mode styles for input fields and buttons */
+        .dark-mode .form-group input[type="text"],
+        .dark-mode .form-group input[type="password"],
+        .dark-mode .form-group select,
+        .dark-mode .form-group button {
+            background-color: #444;
+            color: #eee;
+        }
+
+        /* Dark mode toggle button styles */
+        .dark-mode-toggle {
+            background-color: transparent;
+            border: none;
+            color: inherit;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Sun and moon icons */
+        .dark-mode-toggle .icon {
+            font-size: 24px;
+        }
+
+        .dark-mode-toggle .sun-icon {
+            display: none;
+        }
+
+        .dark-mode .dark-mode-toggle .moon-icon {
+            display: none;
+        }
+
+        .dark-mode .dark-mode-toggle .sun-icon {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>WiFi QR Code Generator</h2>
+        <div class="form-group">
+            <label for="ssid">SSID (Network Name):</label>
+            <input type="text" id="ssid" name="ssid">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="encryption">Encryption:</label>
+            <select id="encryption" name="encryption">
+                <option value="WPA">WPA/WPA2</option>
+                <option value="WEP">WEP</option>
+                <option value="nopass">None</option>
+            </select>
+        </div>
+        <button onclick="generateQRCode()">Generate QR Code</button>
+        <div id="qrcode"></div>
+        <!-- Dark mode toggle -->
+        <div class="toggle-dark-mode">
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+                <span class="icon sun-icon">☀️</span>
+                <span class="icon moon-icon">🌙</span>
+                Dark Mode
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1/qrcode.min.js"></script>
+    <script>
+        function generateQRCode() {
+            var ssid = document.getElementById("ssid").value;
+            var password = document.getElementById("password").value;
+            var encryption = document.getElementById("encryption").value;
+            var qrCodeContainer = document.getElementById("qrcode");
+
+            // Clear previous QR Code
+            qrCodeContainer.innerHTML = "";
+
+            // Generate WiFi QR code configuration
+            var wifiConfig = `WIFI:T:${encryption};S:${ssid};P:${password};;`;
+
+            // Generate the QR code
+            var qr = qrcode(0, "L");
+            qr.addData(wifiConfig);
+            qr.make();
+
+            // Create an image for the QR code and add it to the page
+            var imgTag = qr.createImgTag();
+            qrCodeContainer.innerHTML = imgTag;
+        }
+
+        function toggleDarkMode() {
+            var body = document.body;
+
+            // Toggle dark mode class on body
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
