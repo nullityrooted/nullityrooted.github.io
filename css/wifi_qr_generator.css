@@ -48,7 +48,7 @@ h2, label, select, input[type="text"], input[type="password"], button {
 .toggle-password {
     position: absolute;
     right: 10px;
-    top: 60px; /* Adjusted for consistency */
+    top: 63px; /* Adjusted for consistency */
     cursor: pointer;
 }
 
@@ -108,4 +108,9 @@ h2, label, select, input[type="text"], input[type="password"], button {
 
 .dark-mode .dark-mode-toggle .sun-icon {
     display: inline;
+}
+
+.security-message {
+    color: gold;
+    text-align: center;
 }
