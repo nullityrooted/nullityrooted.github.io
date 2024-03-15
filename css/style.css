@@ -6,7 +6,7 @@ body {
     line-height: 1.6;
 }
 
-#contact a{
+#contact a {
     color: black;
     text-decoration: none;
 }
@@ -17,17 +17,17 @@ body {
     margin: auto;
     padding: 20px;
 }
-    
+
 header { 
-    background: #333; color: #fff; padding: 20px 0; 
+    background: #333; 
+    color: #fff; 
+    padding: 20px 0; 
 }
 
 header nav { 
-    display: flex; justify-content: center; gap: 20px; 
-}
-
-header nav a { 
-    color: #fff; text-decoration: none; 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
 }
 
 /* Styling for navigation */
@@ -42,14 +42,21 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid transparent; /* Add border for button effect */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 nav a.active, nav a:hover {
-    color: gold;
+    color: #333; /* Dark text on hover */
+    background-color: gold; /* Bright background on hover */
+    border-color: gold; /* Gold border to match the background */
 }
 
 .hero { 
-    text-align: center; padding: 50px 20px; 
+    text-align: center; 
+    padding: 50px 20px; 
 }
 
 .hero h1 { 
