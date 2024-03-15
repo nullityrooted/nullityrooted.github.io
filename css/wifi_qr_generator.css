@@ -44,6 +44,17 @@ label, select, input[type="text"], input[type="password"], button {
     color: #333;
 }
 
+.form-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 60px; /* Adjust this value based on your input's size and padding */
+    cursor: pointer;
+}
+
 /* Dark mode styles */
 .dark-mode {
     background-color: #333;
