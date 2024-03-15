@@ -41,3 +41,31 @@ body {
 .post-content {
     margin-top: 20px;
 }
+
+pre {
+    background-color: #333;
+    color: #FFD700;
+    padding: 15px;
+    overflow-x: auto;
+    border-radius: 4px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+}
+
+ol {
+    counter-reset: item;
+}
+
+ol > li {
+    list-style: none;
+    counter-increment: item;
+    margin-bottom: 10px;
+}
+
+ol > li:before {
+    content: counter(item) ". ";
+    font-weight: bold;
+}

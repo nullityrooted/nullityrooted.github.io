@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Post Title</title>
     <link rel="stylesheet" href="../css/blog_style.css">
+    <!-- Add a link to a CSS file for code highlighting (optional, for advanced styling) -->
 </head>
 <body>
     <header class="blog-header">
@@ -18,196 +19,195 @@
 
     <article class="blog-post">
         <header>
-            <h2>Blog Post Title</h2>
+            <h2>Installing Nextcloud on an Ubuntu Server</h2>
             <div class="post-meta">
                 <span>Published on <time datetime="2024-03-15">March 15, 2024</time></span>
-                <span>By Author Name</span>
+                <span>By Eric Lee</span>
             </div>
         </header>
         <section class="post-content">
-            <p>## Install Nextcloud on Ubuntu Server
+            <h3>Install Nextcloud on Ubuntu Server</h3>
+            <ol>
+                <li>First, install Ubuntu Server LTS and update the packages:
+<pre><code>sudo apt update
+sudo apt upgrade</code></pre>
+                </li>
+                <li><strong>Install LAMP Stack:</strong> Nextcloud requires a web server, a database server, and PHP. Install Apache, MySQL/MariaDB, and PHP along with necessary modules:
+<pre><code>sudo apt install apache2 mariadb-server php php-{cli,gd,mysql,mbstring,xml,zip,curl,bcmath,gmp,intl,bz2,imagick}</code></pre>
+                </li>
+                <!-- Continue with other steps similarly -->
 
-                1. First install Ubuntu Server LTS and update the packages
-                
-                   ```
-                   sudo apt update
-                   sudo apt upgrade
-                   ```
-                2. **Install LAMP Stack:** Nextcloud requires a web server, a database server, and PHP. You can install these components by setting up a LAMP (Linux, Apache, MySQL/MariaDB, PHP) stack. Run the following command to install Apache, MySQL/MariaDB, and PHP along with necessary modules:
-                
-                   ```
-                   sudo apt install apache2 mariadb-server php php-{cli,gd,mysql,mbstring,xml,zip,curl,bcmath,gmp,intl,bz2,imagick}
-                   ```
                 3. **Secure MySQL/MariaDB Installation:** After installing MariaDB, it's recommended to secure the installation by running the following command and following the prompts:
-                
-                   ```
-                   sudo mysql_secure_installation
-                   ```
-                4. **Create a Database and User for Nextcloud:** Log in to the MySQL/MariaDB shell as the root user:
-                
-                   ```
-                   sudo mysql -u root -p
-                   ```
-                
-                   Then, create a new database, user, and grant necessary privileges to the user. Replace `nextcloud_db`, `nextcloud_user`, and `your_password` with your preferred values:
-                
-                   ```
-                   CREATE DATABASE nextcloud_db;
-                   CREATE USER 'nextcloud_user'@'localhost' IDENTIFIED BY 'your_password';
-                   GRANT ALL PRIVILEGES ON nextcloud_db.* TO 'nextcloud_user'@'localhost';
-                   FLUSH PRIVILEGES;
-                   EXIT;
-                   ```
-                5. **Download and Extract Nextcloud:** Visit the Nextcloud download page to get the link for the latest version of Nextcloud. Use `wget` to download the tarball:
-                
-                   ```
-                   wget https://download.nextcloud.com/server/releases/nextcloud-x.y.z.tar.bz2
-                   ```
-                
-                   Replace `x.y.z` with the version number you downloaded. Then, extract the tarball to the Apache web server's document root directory:
-                
-                   ```
-                   sudo tar -xjf nextcloud-x.y.z.tar.bz2 -C /var/www/
-                   ```
-                6. **Set Permissions:** Change ownership of the Nextcloud directory to the Apache web server user and group:
-                
-                   ```
-                   sudo chown -R www-data:www-data /var/www/nextcloud
-                   ```
-                7. **Configure Apache:** Create a new Apache configuration file for Nextcloud:
-                
-                   ```
-                   sudo nano /etc/apache2/sites-available/nextcloud.conf
-                   ```
-                
-                   Add the following configuration:
-                
-                   ```
-                   <VirtualHost *:443>
-                       DocumentRoot /var/www/nextcloud/
-                       ServerName your_domain_or_IP
-                   
-                       # Enable HSTS header (For security on local https, encrypts traffic.)
-                       Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
-                   
-                       <Directory /var/www/nextcloud/>
-                           Options +FollowSymlinks
-                           AllowOverride All
-                   
-                           <IfModule mod_dav.c>
-                               Dav off
-                           </IfModule>
-                   
-                           SetEnv HOME /var/www/nextcloud
-                           SetEnv HTTP_HOME /var/www/nextcloud
-                       </Directory>
-                   
-                       ErrorLog ${APACHE_LOG_DIR}/error.log
-                       CustomLog ${APACHE_LOG_DIR}/access.log combined
-                   </VirtualHost>
-                   ```
-                
-                   Replace `your_domain_or_IP` with your domain name or IP address. Save and close the file.
-                8. 
-                
-                ```
-                sudo a2ensite nextcloud.conf
-                sudo a2enmod rewrite headers env dir mime
-                ```
-                
-                1. **Restart Apache:** After making configuration changes, restart Apache to apply the changes:
-                
-                   ```
-                   sudo systemctl restart apache2
-                   ```
-                2. Self sign a certificate for local hosting:
-                
-                   ```
-                   sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nextcloud.key -out /etc/ssl/certs/nextcloud.crt
-                   ```
-                   1. **Configure Apache to Use the Self-Signed Certificate:** Edit your Apache configuration file (`/etc/apache2/sites-available/nextcloud.conf`) and configure SSL settings to use the self-signed certificate. Update the file as follows:
-                
-                      ```
-                      <VirtualHost *:443>
-                          DocumentRoot /var/www/nextcloud/
-                          ServerName localhost
-                          
-                          # Enables the HSTS header globally
-                          Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
-                      
-                          <Directory /var/www/nextcloud/>
-                              Options +FollowSymlinks
-                              AllowOverride All
-                      
-                              <IfModule mod_dav.c>
-                                  Dav off
-                              </IfModule>
-                      
-                              SetEnv HOME /var/www/nextcloud
-                              SetEnv HTTP_HOME /var/www/nextcloud
-                          </Directory>
-                      
-                          # This grabs our self signed cert
-                          SSLEngine on
-                          SSLCertificateFile /etc/ssl/certs/nextcloud.crt
-                          SSLCertificateKeyFile /etc/ssl/private/nextcloud.key
-                      
-                          # Implements the SSL requirements
-                          SSLProtocol all -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
-                          SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
-                      
-                          ErrorLog ${APACHE_LOG_DIR}/error.log
-                          CustomLog ${APACHE_LOG_DIR}/access.log combined
-                      </VirtualHost>
-                      ```
-                
-                      Save the changes and close the file.
-                3. **Enable SSL Module and Restart Apache:** Enable the SSL module and restart Apache to apply the changes:
-                
-                   ```
-                   sudo a2enmod ssl
-                   sudo systemctl restart apache2
-                   ```
-                4. Set some of these permissions to allow writing into the directories:
-                
-                   ```
-                   sudo chown -R www-data:www-data /var/www/nextcloud/config/
-                   sudo chown -R www-data:www-data /var/www/nextcloud/apps/
-                   sudo chown -R www-data:www-data /var/www/nextcloud/data
-                   ```
-                5. Also make this dir and set permissions:
-                
-                   ```
-                   sudo mkdir -p /var/www/nextcloud/data
-                   sudo chmod -R 750 /var/www/nextcloud/data
-                   ```
-                
-                Additional stuff.
-                
-                1. Edit the default memory to increase it from 128 to 512mb.
-                
-                   ```
-                   sudo nano /etc/php/7.x/apache2/php.ini
-                   ```
-                2. Change this line:
-                
-                   ```
-                   memory_limit = 512M
-                   ```
-                3. Restart the server once again:
-                
-                   ```
-                   sudo systemctl restart apache2
-                   ```
-                4. Launch the server on a browser at <https://192.x.x.x/> and attempt to login with the prior credentials.
-                
-                Add imagemagick and enable it:
-                
-                ```
-                sudo apt install imagemagick
-                sudo systemctl restart apache2
-                ```</p>
-            <!-- More content here -->
+
+   ```
+   sudo mysql_secure_installation
+   ```
+4. **Create a Database and User for Nextcloud:** Log in to the MySQL/MariaDB shell as the root user:
+
+   ```
+   sudo mysql -u root -p
+   ```
+
+   Then, create a new database, user, and grant necessary privileges to the user. Replace `nextcloud_db`, `nextcloud_user`, and `your_password` with your preferred values:
+
+   ```
+   CREATE DATABASE nextcloud_db;
+   CREATE USER 'nextcloud_user'@'localhost' IDENTIFIED BY 'your_password';
+   GRANT ALL PRIVILEGES ON nextcloud_db.* TO 'nextcloud_user'@'localhost';
+   FLUSH PRIVILEGES;
+   EXIT;
+   ```
+5. **Download and Extract Nextcloud:** Visit the Nextcloud download page to get the link for the latest version of Nextcloud. Use `wget` to download the tarball:
+
+   ```
+   wget https://download.nextcloud.com/server/releases/nextcloud-x.y.z.tar.bz2
+   ```
+
+   Replace `x.y.z` with the version number you downloaded. Then, extract the tarball to the Apache web server's document root directory:
+
+   ```
+   sudo tar -xjf nextcloud-x.y.z.tar.bz2 -C /var/www/
+   ```
+6. **Set Permissions:** Change ownership of the Nextcloud directory to the Apache web server user and group:
+
+   ```
+   sudo chown -R www-data:www-data /var/www/nextcloud
+   ```
+7. **Configure Apache:** Create a new Apache configuration file for Nextcloud:
+
+   ```
+   sudo nano /etc/apache2/sites-available/nextcloud.conf
+   ```
+
+   Add the following configuration:
+
+   ```
+   <VirtualHost *:443>
+       DocumentRoot /var/www/nextcloud/
+       ServerName your_domain_or_IP
+   
+       # Enable HSTS header (For security on local https, encrypts traffic.)
+       Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+   
+       <Directory /var/www/nextcloud/>
+           Options +FollowSymlinks
+           AllowOverride All
+   
+           <IfModule mod_dav.c>
+               Dav off
+           </IfModule>
+   
+           SetEnv HOME /var/www/nextcloud
+           SetEnv HTTP_HOME /var/www/nextcloud
+       </Directory>
+   
+       ErrorLog ${APACHE_LOG_DIR}/error.log
+       CustomLog ${APACHE_LOG_DIR}/access.log combined
+   </VirtualHost>
+   ```
+
+   Replace `your_domain_or_IP` with your domain name or IP address. Save and close the file.
+8. 
+
+```
+sudo a2ensite nextcloud.conf
+sudo a2enmod rewrite headers env dir mime
+```
+
+1. **Restart Apache:** After making configuration changes, restart Apache to apply the changes:
+
+   ```
+   sudo systemctl restart apache2
+   ```
+2. Self sign a certificate for local hosting:
+
+   ```
+   sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nextcloud.key -out /etc/ssl/certs/nextcloud.crt
+   ```
+   1. **Configure Apache to Use the Self-Signed Certificate:** Edit your Apache configuration file (`/etc/apache2/sites-available/nextcloud.conf`) and configure SSL settings to use the self-signed certificate. Update the file as follows:
+
+      ```
+      <VirtualHost *:443>
+          DocumentRoot /var/www/nextcloud/
+          ServerName localhost
+      	
+      	# Enables the HSTS header globally
+          Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+      
+          <Directory /var/www/nextcloud/>
+              Options +FollowSymlinks
+              AllowOverride All
+      
+              <IfModule mod_dav.c>
+                  Dav off
+              </IfModule>
+      
+              SetEnv HOME /var/www/nextcloud
+              SetEnv HTTP_HOME /var/www/nextcloud
+          </Directory>
+      
+      	# This grabs our self signed cert
+          SSLEngine on
+          SSLCertificateFile /etc/ssl/certs/nextcloud.crt
+          SSLCertificateKeyFile /etc/ssl/private/nextcloud.key
+      
+      	# Implements the SSL requirements
+          SSLProtocol all -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
+          SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
+      
+          ErrorLog ${APACHE_LOG_DIR}/error.log
+          CustomLog ${APACHE_LOG_DIR}/access.log combined
+      </VirtualHost>
+      ```
+
+      Save the changes and close the file.
+3. **Enable SSL Module and Restart Apache:** Enable the SSL module and restart Apache to apply the changes:
+
+   ```
+   sudo a2enmod ssl
+   sudo systemctl restart apache2
+   ```
+4. Set some of these permissions to allow writing into the directories:
+
+   ```
+   sudo chown -R www-data:www-data /var/www/nextcloud/config/
+   sudo chown -R www-data:www-data /var/www/nextcloud/apps/
+   sudo chown -R www-data:www-data /var/www/nextcloud/data
+   ```
+5. Also make this dir and set permissions:
+
+   ```
+   sudo mkdir -p /var/www/nextcloud/data
+   sudo chmod -R 750 /var/www/nextcloud/data
+   ```
+
+Additional stuff.
+
+1. Edit the default memory to increase it from 128 to 512mb.
+
+   ```
+   sudo nano /etc/php/7.x/apache2/php.ini
+   ```
+2. Change this line:
+
+   ```
+   memory_limit = 512M
+   ```
+3. Restart the server once again:
+
+   ```
+   sudo systemctl restart apache2
+   ```
+4. Launch the server on a browser at <https://192.x.x.x/> and attempt to login with the prior credentials.
+
+Add imagemagick and enable it:
+
+```
+sudo apt install imagemagick
+sudo systemctl restart apache2
+```
+            </ol>
+            <!-- Add additional content and steps as needed -->
         </section>
         <footer>
             <p>Posted in <a href="#">Category Name</a> | <a href="#">Comments (0)</a></p>
