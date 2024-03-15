@@ -25,6 +25,16 @@ header nav {
     gap: 20px; 
 }
 
+/* Paragraph Styling */
+
+p {
+    background-color: #333;
+    color: gold;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
 /* Styling for navigation */
 nav {
     display: flex;
@@ -114,7 +124,7 @@ nav a.active, nav a:hover {
     text-align: center;
     padding: 20px;
     background-color: #333;
-    color: white;
+    color: gold;
 }
 
 .footer .social-links {
