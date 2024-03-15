@@ -58,7 +58,7 @@ label, select, input[type="text"], input[type="password"], button {
 /* Dark mode styles */
 .dark-mode {
     background-color: #333;
-    color: #fff;
+    color: gold;
 }
 
 #qrcode {
@@ -83,15 +83,14 @@ label, select, input[type="text"], input[type="password"], button {
 .dark-mode .form-group input[type="password"],
 .dark-mode .form-group select,
 .dark-mode .form-group button {
-    background-color: #444;
-    color: #eee;
+    background-color: #333;
+    color: gold;
 }
 
 /* Dark mode toggle button styles */
 .dark-mode-toggle {
-    background-color: transparent;
     border: none;
-    color: inherit;
+    color: gold;
     font-size: 16px;
     cursor: pointer;
 }
