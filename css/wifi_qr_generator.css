@@ -61,6 +61,13 @@ label, select, input[type="text"], input[type="password"], button {
     color: gold;
 }
 
+/* Add this to change the container background color and text color in dark mode */
+.dark-mode .container, label, button {
+    background-color: #222; /* Slightly darker than body for contrast, or choose another color */
+    border-color: gold; 
+    color: gold; /* Optional: if you want to change the text color inside the container */
+}
+
 #qrcode {
     margin-top: 20px;
     padding: 20px;
@@ -84,13 +91,13 @@ label, select, input[type="text"], input[type="password"], button {
 .dark-mode .form-group select,
 .dark-mode .form-group button {
     background-color: #333;
+    border-color: gold;
     color: gold;
 }
 
 /* Dark mode toggle button styles */
 .dark-mode-toggle {
     border: none;
-    color: gold;
     font-size: 16px;
     cursor: pointer;
 }
