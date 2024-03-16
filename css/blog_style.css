@@ -18,6 +18,10 @@ body {
     margin: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 .blog-header nav a, .blog-post a {
     color: gold; /* Gold links */
     text-decoration: none;
