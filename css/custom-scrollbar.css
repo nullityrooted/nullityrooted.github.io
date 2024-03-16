@@ -1,0 +1,17 @@
+/* Define scrollbar styles */
+::-webkit-scrollbar {
+    width: 0px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Border radius of the thumb */
+}
+
+/* For Firefox */
+/* scrollbar-width: thin; */
+/* scrollbar-color: #888 #f0f0f0; */
