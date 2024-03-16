@@ -78,6 +78,11 @@ nav a.active, nav a:hover {
     padding: 50px 20px; 
 }
 
+.hero p {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
 .hero h1 { 
     color: var(--secondary-color);
     margin: 0;
@@ -166,7 +171,7 @@ main {
 }
 
 .post h3 a {
-    color: var(--primary-color); /* Adjust based on your color scheme */
+    color: var(--secondary-color); /* Adjust based on your color scheme */
     text-decoration: none; /* Removes underline */
 }
 
