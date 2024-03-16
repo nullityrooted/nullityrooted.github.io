@@ -46,6 +46,7 @@
                 <i class="fa-regular fa-lightbulb"></i>
             </button>
         </div>
+        
         <div class="security-message">
             <h3>Your Privacy is Important</h3>
             <p>All data entered here is processed directly within your browser, ensuring that your sensitive information, such as WiFi SSID and password, remains private and secure. No personal data is transmitted to or stored on any server. Please ensure you are visiting this site over a secure HTTPS connection for optimal security.</p>
@@ -72,8 +73,9 @@
                 // For example, if your library accepts colors and size in the options:
                 color: "#FFD700", // Gold color for QR code
                 background: "#333333", // Dark background
-                ecl: "M", // Error correction level
-                content: wifiConfig
+                ecl: "L", // Error correction level
+                content: wifiConfig,
+                swap: true
             };
     
             // Adjust this part according to your library's API for generating SVG
@@ -84,7 +86,7 @@
         }
     </script>
     
-    
+    <!-- Script to toggle the default dark mode. -->
     <script>
         function toggleDarkMode() {
             var body = document.body;
@@ -94,8 +96,8 @@
         }
     </script>
 
-
     <script src="js/pass-toggle.js"></script>
 
 </body>
+
 </html>
