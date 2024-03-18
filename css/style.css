@@ -20,7 +20,8 @@ header, .bio, .experience, .skills, .interests, .contact, footer {
 .profile-photo {
     max-width: 150px;
     height: auto;
-    border-radius: 50%;
+    border-radius: 6px;
+    border: 3px solid var(--secondary-color);
 }
 
 ul {
