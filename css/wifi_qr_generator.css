@@ -13,6 +13,41 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+header { 
+    background: var(--secondary-color); 
+    padding: 20px 0; 
+}
+
+header nav { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+/* Styling for navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--secondary-color);
+    padding: 10px;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid transparent; /* Add border for button effect */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+nav a.active, nav a:hover {
+    color: var(--secondary-color); /* Dark text on hover */
+    background-color: var(--primary-color); /* Bright background on hover */
+    border-color: var(--primary-color); /* var(--primary-color) border to match the background */
+}
+
 .container {
     display: flex;
     flex-direction: column;
