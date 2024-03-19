@@ -22,6 +22,8 @@ html {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    text-shadow: 3px 4px 5px #000;
+    box-shadow: inset 0px -10px 10px #000;
 }
 
 .container {
@@ -271,6 +273,19 @@ nav ul li a:hover::after {
 .layer h3, p {
     font-weight: 500;
     margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: gold;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #262626;
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    text-align: center;
 }
 
 .work:hover img {
