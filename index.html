@@ -14,259 +14,250 @@
 </head>
 <body>
     
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="img/logo2.png" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <!-- <p>UI/UX Designer</p> -->
-                <h1>Hi, I'm <span>Eric</span> <br></h1>
-            </div>
-        </div>
-    </div>
-
-    <!-- About -->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="img/profile.jpg" alt="">
-                </div>
-
-                <!-- Corrected -->
-                <div class="sub-title about-col-2">
-                    <h1>What's an Eric?</h1>
-                    <p>I'm a third year IT student with a focus in Web Design and Development. </p>
-
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
-                        <p class="tab-links" onclick="opentab('education', event)">Education</p>                        
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>UI/UX</span><br>Designing WebApp Interfaces</li>
-                            <li><span>Web Development</span><br>Designing WebApp Interfaces</li>
-                            <li><span>App Development</span><br>Building Android/iOS apps</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>2022-2023</span><br>Applied Value Technologies</li>
-                            <p>Did contracting work with Meta</p>
-                            <p>Uphold Service Level Agreements (SLAs) by efficiently prioritizing and addressing
-                                support tickets for both clients and internal users.
-                                Act as the primary point of contact for customer support inquiries, adeptly
-                                escalating technical issues to engineers and developers when necessary.
-                                </p>
-                            <li><span>2019-2021</span><br>Pipeworks Studios</li>
-                            <p>
-                                Assisted in establishing a remote testing site for a major cruise line, ensuring
-                                high-quality assurance.
-                                Routinely utilized AnyConnect for mobile and software testing, as well as
-                                connecting desktop PCs to client networks for data validation.
-                                Automated VPN connections using OpenConnect and Python, streamlining
-                                processes.
-                                Configured web servers with IIS for application testing on ProCentric-enabled
-                                TVs.
-                                Installed and tested builds on Ubuntu Linux to meet client requirements.
-                                Conducted testing for Apple TV and Amazon Fire TV applications.
-                                Developed, executed, and revised test scripts for client projects.
-                                Collaborated closely with developers and product owners to ensure product
-                                quality.
-                                Performed API testing for user data validation using Postman</p>
-                            <!-- <li><span>2017</span><br>Building Android/iOS apps</li> -->
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>Southern New Hampshire University</span><br>B.S. IT focus in Web Design and Development</li>
-                            <li><span>Western Governors University 2017-2018</span><br> Information Technology</li>
-                        </ul>
-                    </div>
+    <div class="wrapper">
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="img/logo2.png" class="logo">
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <!-- <p>UI/UX Designer</p> -->
+                    <h1>Hi, I'm <span>Eric</span> <br></h1>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Services -->
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <a href="">
-                    <div>
-                        <i class="fa-solid fa-swatchbook"></i>
-                        <h2>Web Design</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque consequuntur sint praesentium voluptas architecto, et velit officiis facilis ratione illo impedit error inventore facere deserunt repudiandae! Iure, eum est!</p>
+        <!-- About -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="img/profile.jpg" alt="">
                     </div>
-                </a>
-                <a href="">
-                    <div>
-                        <i class="fa-brands fa-uikit"></i>
-                        <h2>UI/UX Design</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque consequuntur sint praesentium voluptas architecto, et velit officiis facilis ratione illo impedit error inventore facere deserunt repudiandae! Iure, eum est!</p>
-                    </div>
-                </a>
-                <a href="">
-                    <div>
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                        <h2>App Design</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque consequuntur sint praesentium voluptas architecto, et velit officiis facilis ratione illo impedit error inventore facere deserunt repudiandae! Iure, eum est!</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio -->
-    <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Portfolio</h1>
-            <div class="work-list">
-                <div class="work">
-                    <a href="wifi_qr_generator.html">
-                        <img src="img/qr-app.png" alt="">
-                        <div class="layer">
-                            <h3>WiFi QR Generator</h3>
-                            <p>A simple webapp to generate QR codes from your WiFi so you don't have to remember passwords!</p>
+                    <!-- Corrected -->
+                    <div class="sub-title about-col-2">
+                        <h1>What's an Eric?</h1>
+                        <p>I'm a third year IT student with a focus in Web Design and Development. </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
+                            <p class="tab-links" onclick="opentab('education', event)">Education</p>
                         </div>
-                    </a>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>UI/UX</span><br>Designing WebApp Interfaces</li>
+                                <li><span>Web Development</span><br>Designing WebApp Interfaces</li>
+                                <li><span>App Development</span><br>Building Android/iOS apps</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2022-2023</span><br>Applied Value Technologies</li>
+                                <p>Did contracting work with Meta</p>
+                                <p>Uphold Service Level Agreements (SLAs) by efficiently prioritizing and addressing
+                                    support tickets for both clients and internal users.
+                                    Act as the primary point of contact for customer support inquiries, adeptly
+                                    escalating technical issues to engineers and developers when necessary.
+                                    </p>
+                                <li><span>2019-2021</span><br>Pipeworks Studios</li>
+                                <p>
+                                    Assisted in establishing a remote testing site for a major cruise line, ensuring
+                                    high-quality assurance.
+                                    Routinely utilized AnyConnect for mobile and software testing, as well as
+                                    connecting desktop PCs to client networks for data validation.
+                                    Automated VPN connections using OpenConnect and Python, streamlining
+                                    processes.
+                                    Configured web servers with IIS for application testing on ProCentric-enabled
+                                    TVs.
+                                    Installed and tested builds on Ubuntu Linux to meet client requirements.
+                                    Conducted testing for Apple TV and Amazon Fire TV applications.
+                                    Developed, executed, and revised test scripts for client projects.
+                                    Collaborated closely with developers and product owners to ensure product
+                                    quality.
+                                    Performed API testing for user data validation using Postman</p>
+                                <!-- <li><span>2017</span><br>Building Android/iOS apps</li> -->
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Southern New Hampshire University</span><br>B.S. IT focus in Web Design and Development</li>
+                                <li><span>Western Governors University 2017-2018</span><br> Information Technology</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
+            </div>
+        </div>
+        <!-- Services -->
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">My Services</h1>
+                <div class="services-list">
                     <a href="">
-                        <img src="img/music-app.png" alt="">
-                        <div class="layer">
-                            <h3>Music App</h3>
-                            <p>This app lets you connect with talented people around the world!</p>
+                        <div>
+                            <i class="fa-solid fa-swatchbook"></i>
+                            <h2>Web Design</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque consequuntur sint praesentium voluptas architecto, et velit officiis facilis ratione illo impedit error inventore facere deserunt repudiandae! Iure, eum est!</p>
                         </div>
                     </a>
-                </div>
-                <div class="work">
                     <a href="">
-                        <img src="img/shopping-app.png" alt="">
-                        <div class="layer">
-                            <h3>Online Shopping App</h3>
-                            <p>This app lets you connect with talented people around the world!</p>
+                        <div>
+                            <i class="fa-brands fa-uikit"></i>
+                            <h2>UI/UX Design</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque consequuntur sint praesentium voluptas architecto, et velit officiis facilis ratione illo impedit error inventore facere deserunt repudiandae! Iure, eum est!</p>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div>
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            <h2>App Design</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque consequuntur sint praesentium voluptas architecto, et velit officiis facilis ratione illo impedit error inventore facere deserunt repudiandae! Iure, eum est!</p>
                         </div>
                     </a>
                 </div>
             </div>
-            <a href="portfolio.html" class="btn">See More</a>
         </div>
-    </div>
-
-    <!-- Contact -->
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i> <a href="mailto:contact@example.com">contact@example.com</a></p>
-                    <p><i class="fa-solid fa-phone"></i> +38 555 555 5555</p>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/mr-e-lee/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/nullityrooted" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://twitter.com/nullityrooted" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter?</a>
+        <!-- Portfolio -->
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="sub-title">My Portfolio</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <a href="wifi_qr_generator.html">
+                            <img src="img/qr-app.png" alt="">
+                            <div class="layer">
+                                <h3>WiFi QR Generator</h3>
+                                <p>A simple webapp to generate QR codes from your WiFi so you don't have to remember passwords!</p>
+                            </div>
+                        </a>
                     </div>
-                    <a href="img/CV.pdf" download class="btn btn2">Download CV</a>
+                    <div class="work">
+                        <a href="">
+                            <img src="img/music-app.png" alt="">
+                            <div class="layer">
+                                <h3>Music App</h3>
+                                <p>This app lets you connect with talented people around the world!</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="work">
+                        <a href="">
+                            <img src="img/shopping-app.png" alt="">
+                            <div class="layer">
+                                <h3>Online Shopping App</h3>
+                                <p>This app lets you connect with talented people around the world!</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-               
+                <a href="portfolio.html" class="btn">See More</a>
             </div>
         </div>
-        <div class="copyright">
-            <p>Copyright <i class="fa-regular fa-copyright"></i> Eric Lee 2024</p>
+        <!-- Contact -->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i> <a href="mailto:contact@example.com">contact@example.com</a></p>
+                        <p><i class="fa-solid fa-phone"></i> +38 555 555 5555</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/mr-e-lee/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/nullityrooted" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://twitter.com/nullityrooted" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter?</a>
+                        </div>
+                        <a href="img/CV.pdf" download class="btn btn2">Download CV</a>
+                    </div>
+        
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright <i class="fa-regular fa-copyright"></i> Eric Lee 2024</p>
+            </div>
         </div>
-    </div>
-
-<!-- Script for skills section -->
-    <script>
-        // Corrected script
-        function opentab(tabname, event) {
-            var tablinks = document.getElementsByClassName("tab-links");
-            var tabcontents = document.getElementsByClassName("tab-contents");
-    
-            for (let tablink of tablinks) {
-                tablink.classList.remove("active-link");
+        
+        <!-- Script for skills section -->
+        <script>
+            // Corrected script
+            function opentab(tabname, event) {
+                var tablinks = document.getElementsByClassName("tab-links");
+                var tabcontents = document.getElementsByClassName("tab-contents");
+        
+                for (let tablink of tablinks) {
+                    tablink.classList.remove("active-link");
+                }
+        
+                for (let tabcontent of tabcontents) {
+                    tabcontent.style.display = "none"; // Initially hide all content
+                    tabcontent.classList.remove("active-tab");
+                }
+        
+                document.getElementById(tabname).style.display = "block"; // Show the clicked tab content
+                document.getElementById(tabname).classList.add("active-tab");
+                event.currentTarget.classList.add("active-link");
             }
-    
-            for (let tabcontent of tabcontents) {
-                tabcontent.style.display = "none"; // Initially hide all content
-                tabcontent.classList.remove("active-tab");
-            }
-    
-            document.getElementById(tabname).style.display = "block"; // Show the clicked tab content
-            document.getElementById(tabname).classList.add("active-tab");
-            event.currentTarget.classList.add("active-link");
+        
+            // Initialize tabs (optional)
+            document.addEventListener("DOMContentLoaded", function() {
+                // Automatically open the first tab or a specific tab if needed
+                opentab('skills', {currentTarget: document.querySelector('.tab-links')});
+            });
+        </script>
+        
+        <!-- Script for menu! -->
+        <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.right = "0";
         }
-    
-        // Initialize tabs (optional)
-        document.addEventListener("DOMContentLoaded", function() {
-            // Automatically open the first tab or a specific tab if needed
-            opentab('skills', {currentTarget: document.querySelector('.tab-links')});
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+        // Listen for clicks on the entire document
+        document.addEventListener('click', function(event) {
+            // Check if the click is outside of sidemenu
+            var isClickInsideMenu = sidemenu.contains(event.target);
+            var isMenuButton = event.target.matches('.fa-bars') || event.target.matches('.fa-xmark') || event.target.closest('.fa-bars, .fa-xmark');
+            if (!isClickInsideMenu && !isMenuButton) {
+                closemenu();
+            }
         });
-    </script>
-
-<!-- Script for menu! -->
-    <script>
-    var sidemenu = document.getElementById("sidemenu");
-
-    function openmenu() {
-        sidemenu.style.right = "0";
-    }
-
-    function closemenu() {
-        sidemenu.style.right = "-200px";
-    }
-
-    // Listen for clicks on the entire document
-    document.addEventListener('click', function(event) {
-        // Check if the click is outside of sidemenu
-        var isClickInsideMenu = sidemenu.contains(event.target);
-        var isMenuButton = event.target.matches('.fa-bars') || event.target.matches('.fa-xmark') || event.target.closest('.fa-bars, .fa-xmark');
-
-        if (!isClickInsideMenu && !isMenuButton) {
-            closemenu();
+        // Prevent menu from closing when clicking inside it
+        sidemenu.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+        </script>
+        
+        <button id="backToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        
+        </div>
+        
+        <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("backToTopBtn").style.display = "block";
+          } else {
+            document.getElementById("backToTopBtn").style.display = "none";
+          }
         }
-    });
-
-    // Prevent menu from closing when clicking inside it
-    sidemenu.addEventListener('click', function(event) {
-        event.stopPropagation();
-    });
-</script>
-
-<button id="backToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
-
-</div>
-
-<script>
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("backToTopBtn").style.display = "block";
-      } else {
-        document.getElementById("backToTopBtn").style.display = "none";
-      }
-    }
-    
-    // When the user clicks on the button, scroll to the top of the document
-    document.getElementById("backToTopBtn").onclick = function() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-    </script>
+        
+        // When the user clicks on the button, scroll to the top of the document
+        document.getElementById("backToTopBtn").onclick = function() {
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        </script>
+    </div>
     
     
 </body>

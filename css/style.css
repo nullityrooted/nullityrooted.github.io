@@ -418,7 +418,17 @@ nav .fa-solid {
     border-radius: 4px; /* Rounded corners */
     font-size: 18px; /* Increase font size */
   }
-  
+
+  /* Wrapper for the scrolling issue on mobile */
+  .wrapper {
+    position: absolute;
+    top: 0.5px;
+    left: 0;
+    right: 0;
+    bottom: 0.5px;
+    overflow-x: hidden; /* or any other value */
+    overflow-y: auto; /* or any other value */
+}
 
 @media only screen and (max-width: 600px){
     #header{
