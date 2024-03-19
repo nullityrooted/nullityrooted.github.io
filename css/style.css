@@ -37,7 +37,7 @@ nav {
 }
 
 .logo{
-    width: 140px;
+    width: 100px;
     transition: ease-in 0.3s;
 }
 
@@ -87,7 +87,7 @@ nav ul li a:hover::after {
     color: #FFDA05;
 }
 
-/*-------about------*/
+/* About Section */
 #about {
     padding: 80px 0;
     color: #ababab;
@@ -164,8 +164,13 @@ nav ul li a:hover::after {
     display: block;
 }
 
+.tab-contents p {
+    font-size: 14px;
+}
+
 /* Services */
 #services {
+    background-color: #2f2f2f;
     padding: 30px 0;
 }
 
@@ -174,6 +179,11 @@ nav ul li a:hover::after {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
+}
+
+.services-list a {
+    color: gold;
+    text-decoration: none;
 }
 
 .services-list div {
@@ -186,7 +196,7 @@ nav ul li a:hover::after {
 }
 
 .services-list div i {
-    font-size: 50px;
+    font-size: 30px;
     margin-bottom: 30px;
 }
 
@@ -253,22 +263,9 @@ nav ul li a:hover::after {
     transition: height 0.5s;
 }
 
-.layer h3 {
+.layer h3, p {
     font-weight: 500;
     margin-bottom: 20px;
-}
-
-.layer a {
-    margin-top: 20px;
-    color: #FFDA05;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
 }
 
 .work:hover img{
@@ -276,6 +273,7 @@ nav ul li a:hover::after {
 }
 
 .work:hover .layer {
+    color: #080808;
     height: 100%;
 }
 
@@ -298,8 +296,18 @@ nav ul li a:hover::after {
 
 /* Contact */
 
+#contact {
+    background-color: #2f2f2f;
+}
+
+p a {
+    color: gold;
+    text-decoration: none;
+}
+
 .contact-left {
-    flex-basis: 35%;
+    flex-basis: 100%;
+    text-align: center;
 }
 
 .contact-right {
@@ -389,12 +397,29 @@ nav .fa-solid {
     display: none;
 }
 
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: gold; /* Set a background color */
+    color: #080808; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 8px 15px; /* Some padding */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+
 @media only screen and (max-width: 600px){
     #header{
         background-image: url(../img/bg-mobile.png);
     }
     .header-text {
-        margin-top: 100%;
+        margin-top: 70%;
         font-size: 16px;
     }
     .header-text h1 {
