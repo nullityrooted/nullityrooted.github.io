@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +10,10 @@
 body {
     background: #080808;
     color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 #header {
@@ -60,31 +66,31 @@ nav ul li a::after {
     position: absolute;
     left: 0;
     bottom: -6px;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
-nav ul li a:hover::after{
+nav ul li a:hover::after {
     width: 100%;
 }
 
-.header-text{
-    margin-top: 20%;
+.header-text {
+    margin-top: 10%;
     font-size: 30px;
 }
  
-.header-text h1{
+.header-text h1 {
     font-size: 60px;
     margin-top: 20px;
 }
 
-.header-text h1 span{
+.header-text h1 span {
     color: #FFDA05;
 }
 
 /*-------about------*/
 #about {
     padding: 80px 0;
-    color: #1572b6;
+    color: #ababab;
 }
 
 .row {
@@ -107,7 +113,7 @@ nav ul li a:hover::after{
 }
 
 .sub-title {
-    font-size: 60px;
+    font-size: 32px;
     font-weight: 600;
     color: #fff;
 }
@@ -137,7 +143,7 @@ nav ul li a:hover::after{
 }
 
 .tab-links.active-link::after {
-    width: 50%;
+    width: 100%;
 }
 
 .tab-contents ul li {
@@ -288,4 +294,162 @@ nav ul li a:hover::after{
 .btn:hover {
     background: #FFDA05;
     color: #080808;
+}
+
+/* Contact */
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p{
+    margin-top: 30px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: white;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: gold;
+    transform: translateY(-5px);
+}
+
+.btn.btn2 {
+    background: #080808;
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #FFDA05;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #FFDA05;
+    transition: background 0.5s;
+}
+
+.btn.btn2:hover {
+    background: #FFDA05;
+    color: #080808;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px;
+    color: gold;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.copyright i {
+    color: gold;
+}
+
+/* CSS for small screens */
+
+nav .fa-solid {
+    color: gold;
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(../img/bg-mobile.png);
+    }
+    .header-text {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1 {
+        font-size: 30px;
+    }
+    nav .fa-solid {
+        cursor: pointer;
+        display: block;
+        font-size: 20px;
+    }
+    nav ul {
+        background: #FFDA05;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.3s;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+    nav ul li a {
+        color: #080808;
+    }
+    nav ul .fa-solid {
+        color: #080808;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title {
+        font-size: 18px;
+    }
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+    }
+    .about-col-1 {
+        margin-bottom: 30px;
+    }
+    .about-col-2 {
+        font-size: 14px;
+    }
+    .tab-links {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+    .copyright {
+        font-size: 14px;
+    }
 }

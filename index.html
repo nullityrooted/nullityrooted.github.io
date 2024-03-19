@@ -18,17 +18,19 @@
         <div class="container">
             <nav>
                 <img src="img/logo.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
-            <div id="header-text">
+            <div class="header-text">
                 <p>UI/UX Designer</p>
-                <h1>Hi, I'm <span>Eric</span> Lee <br> from the US</h1>
+                <h1>Hi, I'm <span>Eric</span> <br> from the US</h1>
             </div>
         </div>
     </div>
@@ -38,11 +40,13 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="img/android-chrome-192x192.png" alt="">
+                    <img src="img/profile.jpg" alt="">
                 </div>
-                <div class="sub-title" class="about-col-2">
+
+                <!-- Corrected -->
+                <div class="sub-title about-col-2">
                     <h1>About Me</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quia maxime autem nostrum quod, similique officia molestiae non ex quis, cumque esse obcaecati sunt blanditiis ea. Ducimus facilis molestias voluptatem?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
 
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
@@ -76,7 +80,7 @@
     </div>
 
     <!-- Services -->
-    <div class="services">
+    <div id="services">
         <div class="container">
             <h1 class="sub-title">My Services</h1>
             <div class="services-list">
@@ -105,14 +109,14 @@
     <!-- Portfolio -->
     <div id="portfolio">
         <div class="container">
-            <h1 class="sub-title">My Work</h1>
+            <h1 class="sub-title">My Portfolio</h1>
             <div class="work-list">
                 <div class="work">
                     <img src="img/wifi_qr_generator.png" alt="">
                     <div class="layer">
                         <h3>WiFi QR Generator</h3>
                         <p>A simple webapp to generate QR codes from your WiFi so you don't have to remember passwords!</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="wifi_qr_generator.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -137,35 +141,36 @@
     </div>
 
     <!-- Contact -->
-    <div class="contact">
+    <div id="contact">
         <div class="container">
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p>contact@example.com</p>
-                    <p>111 222 3333</p>
+                    <p><i class="fa-solid fa-paper-plane"></i> contact@example.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 111 222 3333</p>
                     <div class="social-icons">
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/mr-e-lee/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/nullityrooted" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://twitter.com/nullityrooted" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
                     </div>
+                    <a href="img/CV.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
                     <form>
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit">Submit</button>
+                        <button type="submit" class="btn btn2">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
+        <div class="copyright">
+            <p>Copyright <i class="fa-regular fa-copyright"></i> Eric Lee 2024</p>
+        </div>
     </div>
 
-
-
-
+<!-- Script for skills section -->
     <script>
         // Corrected script
         function opentab(tabname, event) {
@@ -192,48 +197,21 @@
             opentab('skills', {currentTarget: document.querySelector('.tab-links')});
         });
     </script>
-    
-    
-    <div class="flex-container">
-    <header>
-        <nav>
-            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
-            <a href="projects.html"><i class="fa-solid fa-folder-plus"></i> Projects</a>
-            <a href="about.html"><i class="fa-solid fa-user"></i> About Me</a>
-        </nav>
-    </header>
 
-    <main>
-        <div class="hero">
-            <h1>Welcome to my Portfolio</h1>
-            <p>Take a look at some of my projects below.</p>
-            <!-- Call to Action Button -->
-            <a href="projects.html" class="cta-button">View My Projects</a>
-        </div>
-    </main>
+<!-- Script for menu! -->
+    <script>
 
-    <!-- Blog Posts Section -->
-    <div class="blog-posts">
-        <h2>Blog Posts/Tutorials</h2>
-        <div class="post">
-            <h3><a href="/blog/blog1.html">Installing Ubuntu Server</a></h3>
-            <p>A short how-to on installing Ubuntu Server. <a href="/blog/blog1.html">Read more...</a></p>
-        </div>
-        <div class="post">
-            <h3><a href="/blog/blog2.html">Setting up Nextcloud on an Ubuntu web server.</a></h3>
-            <p>How to host your own cloud on your very own web server! <a href="blog/blog2.html">Read more...</a></p>
-        </div>
-        <!-- Add more posts here -->
-    </div>
+        var sidemenu = document.getElementById("sidemenu");
 
-    <footer class="footer">
-        Eric's Portfolio © 2024
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/mr-e-lee/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/nullityrooted" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://twitter.com/nullityrooted" target="_blank"><i class="fa-brands fa-x-twitter"></i> formerly known as Twitter</a>
-        </div>
-    </footer>
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+
+    </script>
+
 </div>
     
 </body>
