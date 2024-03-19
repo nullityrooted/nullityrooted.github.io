@@ -237,6 +237,10 @@ nav ul li a:hover::after {
     overflow: hidden;
 }
 
+.work p {
+    color: #080808;
+}
+
 .work img {
     width: 100%;
     border-radius: 6px;
@@ -269,7 +273,7 @@ nav ul li a:hover::after {
 }
 
 .work:hover img{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .work:hover .layer {
@@ -277,6 +281,8 @@ nav ul li a:hover::after {
     height: 100%;
 }
 
+
+/* More projects button */
 .btn {
     display: block;
     margin: 50px auto;
