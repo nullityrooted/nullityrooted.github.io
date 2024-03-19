@@ -9,7 +9,6 @@
 
 body {
     background: #080808;
-    color: #fff;
 }
 
 html {
@@ -79,6 +78,7 @@ nav ul li a:hover::after {
 }
  
 .header-text h1 {
+    color: white;
     font-size: 60px;
     margin-top: 20px;
 }
@@ -187,6 +187,7 @@ nav ul li a:hover::after {
 }
 
 .services-list div {
+    color: white;
     background: #262626;
     padding: 40px;
     font-size: 13px;
@@ -303,6 +304,7 @@ nav ul li a:hover::after {
 /* Contact */
 
 #contact {
+    color: white;
     background-color: #2f2f2f;
 }
 
