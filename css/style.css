@@ -37,13 +37,6 @@ body {
     padding: 10px 10%;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
 .logo{
     width: 100px;
     transition: ease-in 0.3s;
@@ -53,32 +46,94 @@ nav {
     transform: translateY(-10px);
 }
 
+/* Navigation */
+nav {
+    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 nav ul li {
     display: inline-block;
     list-style: none;
-    margin: 10px 20px;
 }
 
 nav ul li a {
-    color: #FFDA05;
+    display: inline-block; /* Changed from absolute to inline-block for layout */
+    width: auto;
+    height: auto;
+    margin: 10px 20px; /* Adjusted for positioning within nav */
     text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+    color: gold;
     font-size: 18px;
-    position: relative;
+    font-family: Arial, sans-serif; /* Added sans-serif as a fallback */
+    letter-spacing: 4px;
+    position: relative; /* Needed for :before and :after */
+    overflow: hidden; /* Ensures pseudo-elements don't overflow */
+    transform: translate(-50%, -50%);
+    padding: 0 10px;
 }
 
-nav ul li a::after {
+/* Set up the pseudo-elements */
+nav ul li a:before,
+nav ul li a:after,
+nav ul li a span:before,
+nav ul li a span:after {
     content: '';
-    width: 0;
-    height: 3px;
-    background: #FFDA05;
     position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.3s;
+    background: gold;
+    transition: all 0.5s ease;
 }
 
-nav ul li a:hover::after {
-    width: 100%;
+/* Initial size and position for the pseudo-elements */
+nav ul li a:before,
+nav ul li a span:before {
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 2px; /* Match your desired border thickness */
+}
+
+nav ul li a:after,
+nav ul li a span:after {
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 2px; /* Match your desired border thickness */
+}
+
+/* Vertical borders */
+nav ul li a:before,
+nav ul li a:after {
+    top: 0;
+    bottom: 0;
+    width: 2px; /* Border thickness */
+    height: 0;
+}
+
+/* Horizontal borders */
+nav ul li a span:before,
+nav ul li a span:after {
+    left: 0;
+    right: 0;
+    height: 2px; /* Border thickness */
+    width: 0;
+}
+
+/* Expand the pseudo-elements on hover to create the border effect */
+nav ul li a:hover:before,
+nav ul li a:hover:after {
+    height: 100%; /* Full height */
+}
+
+nav ul li a:hover span:before,
+nav ul li a:hover span:after {
+    width: 100%; /* Full width */
 }
 
 .header-text {
@@ -100,6 +155,11 @@ nav ul li a:hover::after {
 #about {
     padding: 80px 0;
     color: #ababab;
+    background-image: url(/img/about-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-shadow: 2px 2px 5px #080808;
 }
 
 .row {
@@ -456,6 +516,7 @@ nav .fa-solid {
         cursor: pointer;
         display: block;
         font-size: 20px;
+        text-shadow: 0px 0px 5px #080808;
     }
     nav ul {
         background: #FFDA05;
@@ -469,8 +530,10 @@ nav .fa-solid {
         transition: right 0.3s;
     }
     nav ul li {
+        position: relative;
         display: block;
-        margin: 25px;
+        margin: 0 10px;
+        right: -70px;
     }
     nav ul li a {
         color: #080808;
@@ -481,6 +544,7 @@ nav .fa-solid {
         top: 25px;
         left: 25px;
         cursor: pointer;
+        text-shadow: none;
     }
     .sub-title {
         font-size: 18px;
