@@ -175,11 +175,13 @@ nav ul li a:hover span:after {
     width: 100%;
     border-radius: 6px;
     box-shadow: 0px 0px 10px black;
-    transition: ease 0.5s;
+    transition:  0.3s;
+    border: 2px solid #080808;
 }
 
 .about-col-1 img:hover {
     transform: scale(1.1);
+    border: 2px solid orange;
 }
 
 .about-col-2 {
