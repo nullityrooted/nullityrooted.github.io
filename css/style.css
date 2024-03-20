@@ -433,6 +433,7 @@ nav .fa-solid {
 
 @media only screen and (max-width: 600px){
     #header{
+        height: 100vh;
         background-attachment: scroll;
         background-image: url(../img/bg-mobile.png);
     }
