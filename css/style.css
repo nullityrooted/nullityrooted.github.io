@@ -8,13 +8,23 @@
     scroll-behavior: smooth;
 }
 
+.wrapper {
+    position: absolute;
+    top: 0.5px;
+    left: 0;
+    right: 0;
+    bottom: 0.5px;
+    overflow-x: hidden; /* or any other value */
+    overflow-y: auto; /* or any other value */
+}
+
 body {
     background: #080808;
 }
 
 #header {
     width: 100%;
-    height: 40em;
+    height: 100vh;
     background-image: url(/img/bg.png);
     background-size: cover;
     background-position: center;
@@ -433,8 +443,6 @@ nav .fa-solid {
 
 @media only screen and (max-width: 600px){
     #header{
-        height: 100vh;
-        background-attachment: scroll;
         background-image: url(../img/bg-mobile.png);
     }
     .header-text {
