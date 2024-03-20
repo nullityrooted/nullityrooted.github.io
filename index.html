@@ -253,8 +253,11 @@
 
         <!-- Scrolling issue on mobile -->
         <script>
-            var height = Math.min(document.documentElement.clientHeight, window.innerHeight || 0);
-        </script>
-    
+            document.addEventListener('DOMContentLoaded', function () {
+                // Set initial viewport height as a CSS variable
+                document.documentElement.style.setProperty('--vh-initial', `${window.innerHeight * 0.01}px`);
+            });
+            </script>
+            
 </body>
 </html>

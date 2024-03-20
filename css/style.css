@@ -19,7 +19,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    text-shadow: 3px 4px 5px #000;
+    min-height: calc(var(--vh-initial, 1vh) * 100);
 }
 
 .container {
