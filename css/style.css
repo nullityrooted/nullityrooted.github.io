@@ -8,6 +8,7 @@
     scroll-behavior: smooth;
 }
 
+/* Wrapper around content to fix mobile scrolling issue */
 .wrapper {
     position: absolute;
     top: 0.5px;
@@ -29,6 +30,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    text-shadow: 2px 2px 5px #080808;
 }
 
 .container {
@@ -175,25 +177,25 @@ nav ul li a:hover::after {
     font-size: 14px;
 }
 
-/* Services */
-#services {
+/* Tutorials */
+#tutorials {
     background-color: #2f2f2f;
     padding: 30px 0;
 }
 
-.services-list {
+.tutorials-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
 
-.services-list a {
+.tutorials-list a {
     color: gold;
     text-decoration: none;
 }
 
-.services-list div {
+.tutorials-list div {
     color: white;
     background: #262626;
     padding: 40px;
@@ -203,25 +205,25 @@ nav ul li a:hover::after {
     transition: background 0.5s, transform 0.5s;
 }
 
-.services-list div i {
+.tutorials-list div i {
     font-size: 30px;
     margin-bottom: 30px;
 }
 
-.services-list div h2 {
+.tutorials-list div h2 {
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-.services-list div a {
+.tutorials-list div a {
     text-decoration: none;
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
 }
 
-.services-list div:hover {
+.tutorials-list div:hover {
     background: #FFDA05;
     color: #080808;
     transform: translateY(-10px);
@@ -406,16 +408,13 @@ form .btn2 {
 }
 
 .copyright {
+    color: gold;
     width: 100%;
     text-align: center;
     padding: 25px 0;
     background: #262626;
     font-weight: 300;
     margin-top: 20px;
-}
-
-.copyright i {
-    color: gold;
 }
 
 /* CSS for small screens */
@@ -444,6 +443,7 @@ nav .fa-solid {
 @media only screen and (max-width: 600px){
     #header{
         background-image: url(../img/bg-mobile.png);
+        text-shadow: none;
     }
     .header-text {
         margin-top: 70%;

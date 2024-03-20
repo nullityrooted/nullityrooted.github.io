@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eric's Portfolio</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/logo32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/logo16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
     <link rel="manifest" href="img/site.webmanifest">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -14,15 +14,18 @@
 </head>
 <body>
     
+        <!-- Mobile scrolling wrapper fix -->
         <div class="wrapper">
+            
+            <!-- Hero Section -->
             <div id="header">
                 <div class="container">
                     <nav>
-                        <img src="img/logo2.png" class="logo">
+                        <img src="img/logo.png" class="logo">
                         <ul id="sidemenu">
                             <li><a href="#header">Home</a></li>
                             <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
+                            <li><a href="#tutorials">Tutorials</a></li>
                             <li><a href="#portfolio">Portfolio</a></li>
                             <li><a href="#contact">Contact</a></li>
                             <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
@@ -30,22 +33,21 @@
                         <i class="fa-solid fa-bars" onclick="openmenu()"></i>
                     </nav>
                     <div class="header-text">
-                        <!-- Header extra -->
-                        <!-- <p>UI/UX Designer</p> -->
                         <h1>Hi, I'm <span>Eric</span> <br></h1>
                     </div>
                 </div>
             </div>
+
+
             <!-- About -->
             <div id="about">
                 <div class="container">
                     <div class="row">
                         <div class="about-col-1">
-                            <img src="img/profile.jpg" alt="">
+                            <img src="img/wizard.png" alt="">
                         </div>
-                        <!-- Corrected -->
                         <div class="sub-title about-col-2">
-                            <h1>What's an Eric?</h1>
+                            <h1>Who am i?</h1>
                             <p>I'm a third year IT student with a focus in Web Design and Development. </p>
                             <div class="tab-titles">
                                 <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
@@ -54,7 +56,7 @@
                             </div>
                             <div class="tab-contents active-tab" id="skills">
                                 <ul>
-                                    <li><span>UI/UX</span><br>Designing WebApp Interfaces</li>
+                                    <li><span>UI/UX</span><br><ul>Designing WebApp Interfaces</ul></li>
                                     <li><span>Web Development</span><br>Designing WebApp Interfaces</li>
                                     <li><span>App Development</span><br>Building Android/iOS apps</li>
                                 </ul>
@@ -97,29 +99,31 @@
                     </div>
                 </div>
             </div>
-            <!-- Services -->
-            <div id="services">
+
+            <!-- Tutorials -->
+            <div id="tutorials">
                 <div class="container">
-                    <h1 class="sub-title">My Services</h1>
-                    <div class="services-list">
+                    <h1 class="sub-title">Tutorials</h1>
+                    <div class="tutorials-list">
                             <div>
-                                <i class="fa-solid fa-swatchbook"></i>
-                                <h2>Web Design</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque consequuntur sint praesentium voluptas architecto, et velit officiis facilis ratione illo impedit error inventore facere deserunt repudiandae! Iure, eum est!</p>
+                                <i class="fa-brands fa-ubuntu"></i>
+                                <h2>Installing Ubuntu Server</h2>
+                                <p>How to install Ubuntu Server on an old laptop or desktop.</p>
                             </div>
                             <div>
-                                <i class="fa-brands fa-uikit"></i>
-                                <h2>UI/UX Design</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque consequuntur sint praesentium voluptas architecto, et velit officiis facilis ratione illo impedit error inventore facere deserunt repudiandae! Iure, eum est!</p>
+                                <i class="fa-solid fa-cloud"></i>
+                                <h2>Installing Nextcloud</h2>
+                                <p>How to install Nextcloud on your home server to host your own cloud!</p>
                             </div>
                             <div>
-                                <i class="fa-solid fa-mobile-screen-button"></i>
-                                <h2>App Design</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam doloremque consequuntur sint praesentium voluptas architecto, et velit officiis facilis ratione illo impedit error inventore facere deserunt repudiandae! Iure, eum est!</p>
+                                <i class="fa-brands fa-linux"></i>
+                                <h2>Installing Arch Linux</h2>
+                                <p>Tutorial on how to install Arch Linux in the easiest way possible.</p>
                             </div>
                     </div>
                 </div>
             </div>
+
             <!-- Portfolio -->
             <div id="portfolio">
                 <div class="container">
@@ -129,7 +133,7 @@
                                 <img src="img/qr-app.png" alt="">
                                 <div class="layer">
                                     <h3>WiFi QR Generator</h3>
-                                    <p>A simple webapp to generate QR codes from your WiFi so you don't have to remember passwords!</p>
+                                    <p>A simple webapp to generate QR codes from your WiFi credentials so you don't have to remember passwords!</p>
                                     <a href="wifi_qr_generator.html"><i class="fa-solid fa-up-right-from-square"></i></a>
                                 </div>
                         </div>
@@ -137,7 +141,7 @@
                                 <img src="img/music-app.png" alt="">
                                 <div class="layer">
                                     <h3>Music App</h3>
-                                    <p>This app lets you connect with talented people around the world!</p>
+                                    <p>In progress.</p>
                                     <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                                 </div>
                         </div>
@@ -145,7 +149,7 @@
                                 <img src="img/shopping-app.png" alt="">
                                 <div class="layer">
                                     <h3>Online Shopping App</h3>
-                                    <p>This app lets you connect with talented people around the world!</p>
+                                    <p>In progress.</p>
                                     <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                                 </div>
                         </div>
@@ -153,6 +157,7 @@
                     <a href="portfolio.html" class="btn">See More</a>
                 </div>
             </div>
+
             <!-- Contact -->
             <div id="contact">
                 <div class="container">
@@ -179,7 +184,6 @@
         
         <!-- Script for skills section -->
         <script>
-            // Corrected script
             function opentab(tabname, event) {
                 var tablinks = document.getElementsByClassName("tab-links");
                 var tabcontents = document.getElementsByClassName("tab-contents");
