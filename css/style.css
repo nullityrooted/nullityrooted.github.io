@@ -418,7 +418,7 @@ p a {
 }
 
 .contact-left {
-    flex-basis: 100%;
+    flex-basis: 40%;
     text-align: center;
 }
 
