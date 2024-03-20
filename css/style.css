@@ -160,6 +160,7 @@ nav ul li a:hover span:after {
     background-position: center;
     background-attachment: fixed;
     text-shadow: 2px 2px 5px #080808;
+    box-shadow: 0px 0px 10px black inset;
 }
 
 .row {
@@ -175,6 +176,7 @@ nav ul li a:hover span:after {
 .about-col-1 img {
     width: 100%;
     border-radius: 6px;
+    box-shadow: 0px 0px 10px black;
 }
 
 .about-col-2 {
