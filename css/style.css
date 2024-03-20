@@ -10,8 +10,6 @@
 
 body {
     background: #080808;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
 }
 
 #header {
@@ -22,7 +20,6 @@ body {
     background-position: center;
     background-attachment: fixed;
     text-shadow: 3px 4px 5px #000;
-    box-shadow: inset 0px -10px 10px #000;
 }
 
 .container {

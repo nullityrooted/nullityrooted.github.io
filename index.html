@@ -250,6 +250,11 @@
           window.scrollTo({top: 0, behavior: 'smooth'});
         }
         </script>
+
+        <!-- Scrolling issue on mobile -->
+        <script>
+            var height = Math.min(document.documentElement.clientHeight, window.innerHeight || 0);
+        </script>
     
 </body>
 </html>
