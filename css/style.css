@@ -8,6 +8,10 @@
     scroll-behavior: smooth;
 }
 
+ul li {
+    list-style-type: square; /* or 'circle', 'disc', 'none', etc. */
+  }  
+
 /* Wrapper around content to fix mobile scrolling issue */
 .wrapper {
     position: absolute;
@@ -71,63 +75,6 @@ nav ul li a {
     overflow: hidden; /* Ensures pseudo-elements don't overflow */
     transform: translate(-50%, -50%);
     padding: 10px 10px;
-}
-
-/* Set up the pseudo-elements */
-nav ul li a:before,
-nav ul li a:after,
-nav ul li a span:before,
-nav ul li a span:after {
-    content: '';
-    position: absolute;
-    background: gold;
-    transition: all 0.5s ease;
-}
-
-/* Initial size and position for the pseudo-elements */
-nav ul li a:before,
-nav ul li a span:before {
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 2px; /* Match your desired border thickness */
-}
-
-nav ul li a:after,
-nav ul li a span:after {
-    bottom: 0;
-    right: 0;
-    width: 10px;
-    height: 2px; /* Match your desired border thickness */
-}
-
-/* Vertical borders */
-nav ul li a:before,
-nav ul li a:after {
-    top: 0;
-    bottom: 0;
-    width: 2px; /* Border thickness */
-    height: 0;
-}
-
-/* Horizontal borders */
-nav ul li a span:before,
-nav ul li a span:after {
-    left: 0;
-    right: 0;
-    height: 2px; /* Border thickness */
-    width: 0;
-}
-
-/* Expand the pseudo-elements on hover to create the border effect */
-nav ul li a:hover:before,
-nav ul li a:hover:after {
-    height: 100%; /* Full height */
-}
-
-nav ul li a:hover span:before,
-nav ul li a:hover span:after {
-    width: 100%; /* Full width */
 }
 
 .header-text {
