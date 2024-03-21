@@ -530,6 +530,61 @@ nav .fa-solid {
     border:2px solid #080808;
   }
 
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+}
+
+footer .contact-form form {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+footer .contact-form input,
+footer .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+footer .contact-form button {
+    background-color: #262626;
+    font-size: 14px;
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 2px solid #FFDA05;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFDA05;
+    transition: background 0.3s;
+}
+
+footer .contact-form button:hover {
+    background: #FFDA05;
+    color: #080808;
+    cursor: pointer;
+}
+
+footer .copyright {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
 @media only screen and (max-width: 600px){
     #header{
         background-image: url(../img/bg-mobile.png);
