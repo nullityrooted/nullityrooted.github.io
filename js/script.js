@@ -65,33 +65,3 @@ document.addEventListener('DOMContentLoaded', function() {
         wrapper.scrollTo({top: 0, behavior: 'smooth'});
     };
 });
-
-// Existing JavaScript file modifications
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.menu-toggle').addEventListener('touchstart', function(event) {
-        event.preventDefault();
-        toggleMenu();
-    });
-
-    // Attach event listeners to links for testing
-    document.querySelectorAll('#sidemenu a').forEach(function(link) {
-        link.addEventListener('touchstart', function(event) {
-            // Prevent the default anchor behavior
-            event.preventDefault();
-
-            // Close the menu
-            document.getElementById("sidemenu").style.right = "-200px";
-
-            // Navigate to the section
-            const href = this.getAttribute("href");
-            const offsetTop = document.querySelector(href).offsetTop;
-
-            scroll({
-                top: offsetTop,
-                behavior: "smooth"
-            });
-        });
-    });
-});
-
-// Adjust the existing toggleMenu and other functions as necessary
