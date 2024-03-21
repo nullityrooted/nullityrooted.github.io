@@ -701,7 +701,7 @@ footer .copyright {
     }
     /* Define scrollbar styles */
     ::-webkit-scrollbar {
-        width: 0px; /* Width of the scrollbar */
+        width: 2px; /* Width of the scrollbar */
         height: 0px;
     }
 
