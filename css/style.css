@@ -609,6 +609,16 @@ footer .copyright {
         box-shadow: 0px 0px 10px #080808;
         z-index: 6;
     }
+    .menu-toggle::before {
+        /* Regular microchip icon */
+        content: "\f2db"; /* FontAwesome unicode for fa-microchip */
+    }
+    
+    .menu-toggle.opened::before {
+        /* Icon change when opened, for example, an 'X' or close icon */
+        content: "\f00d"; /* FontAwesome unicode for fa-times */
+    }
+    
     nav .fa-solid {
         cursor: pointer;
         display: block;

@@ -29,8 +29,7 @@
                             <li><a href="#portfolio"><span>Portfolio</span></a></li>
                             <li><a href="#contact"><span>Contact</span></a></li>
                         </ul>
-                        <i class="fa-solid fa-microchip" onclick="openmenu()"></i>
-                        <i class="fa-solid fa-microchip" onclick="closemenu()"></i>
+                        <i class="fa-solid fa-microchip menu-toggle"></i>
                     </nav>
                     <div class="header-text">
                         <h1>Hi, I'm <span>Eric</span> <br></h1>
@@ -50,9 +49,9 @@
                             <h1>Who am I?</h1>
                             <p>I'm a third year IT student with a focus in Web Design and Development. </p>
                             <div class="tab-titles">
-                                <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
-                                <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
-                                <p class="tab-links" onclick="opentab('education', event)">Education</p>
+                                <p class="tab-links active-link">Skills</p>
+                                <p class="tab-links">Experience</p>
+                                <p class="tab-links">Education</p>
                             </div>
                             <div class="tab-contents active-tab" id="skills">
                                 <ul>
@@ -229,82 +228,9 @@
         </div>
 
         <button id="backToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
-
+        
         <!-- Scripts -->
-        
-        <!-- Script for skills section -->
-        <script>
-            function opentab(tabname, event) {
-                var tablinks = document.getElementsByClassName("tab-links");
-                var tabcontents = document.getElementsByClassName("tab-contents");
-        
-                for (let tablink of tablinks) {
-                    tablink.classList.remove("active-link");
-                }
-        
-                for (let tabcontent of tabcontents) {
-                    tabcontent.style.display = "none"; // Initially hide all content
-                    tabcontent.classList.remove("active-tab");
-                }
-        
-                document.getElementById(tabname).style.display = "block"; // Show the clicked tab content
-                document.getElementById(tabname).classList.add("active-tab");
-                event.currentTarget.classList.add("active-link");
-            }
-        
-            // Initialize tabs (optional)
-            document.addEventListener("DOMContentLoaded", function() {
-                // Automatically open the first tab or a specific tab if needed
-                opentab('skills', {currentTarget: document.querySelector('.tab-links')});
-            });
-        </script>
-        
-        <!-- Script for sidemenu -->
-        <script>
-        var sidemenu = document.getElementById("sidemenu");
-        function openmenu() {
-            sidemenu.style.right = "0";
-        }
-        function closemenu() {
-            sidemenu.style.right = "-200px";
-        }
-        // Listen for clicks on the entire document
-        document.addEventListener('click', function(event) {
-            // Check if the click is outside of sidemenu
-            var isClickInsideMenu = sidemenu.contains(event.target);
-            var isMenuButton = event.target.matches('.fa-bars') || event.target.matches('.fa-microchip') || event.target.closest('.fa-bars, .fa-xmark');
-            if (!isClickInsideMenu && !isMenuButton) {
-                closemenu();
-            }
-        });
-        // Prevent menu from closing when clicking inside it
-        sidemenu.addEventListener('click', function(event) {
-            event.stopPropagation();
-        });
-        </script>
-        
-        <!-- Script for mobile scrolling fix -->
-        <script>
-            // Select the wrapper for scrolling instead of window
-            var wrapper = document.querySelector('.wrapper');
-        
-            // Adjust the scrollFunction to monitor the wrapper's scroll
-            wrapper.onscroll = function() {scrollFunction()};
-        
-            function scrollFunction() {
-                if (wrapper.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("backToTopBtn").style.display = "block";
-                } else {
-                    document.getElementById("backToTopBtn").style.display = "none";
-                }
-            }
-        
-            // Adjust the button's onclick function to scroll the wrapper
-            document.getElementById("backToTopBtn").onclick = function() {
-                wrapper.scrollTo({top: 0, behavior: 'smooth'});
-            }
-        </script>
-        
+        <script src="js/script.js"></script>
             
 </body>
 </html>
