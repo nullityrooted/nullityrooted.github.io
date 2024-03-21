@@ -258,7 +258,7 @@ nav ul li a:hover span:after {
 
 /* Tutorials */
 #tutorials {
-    background-image: url(/img/bg-gray.png);
+    /* background-image: url(/img/bg-gray.png); */
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -316,7 +316,7 @@ nav ul li a:hover span:after {
 /* Portfolio */
 #portfolio {
     padding: 50px 0;
-    background-image: url(/img/bg-gray2.png);
+    /* background-image: url(/img/bg-gray2.png); */
     background-attachment: fixed;
 }
 
