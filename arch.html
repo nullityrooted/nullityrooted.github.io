@@ -11,24 +11,93 @@
         <h1>Installing Arch Linux with GNOME</h1>
         <p>This tutorial will guide you through the process of installing Arch Linux using the `archinstall` script and setting up GNOME as the desktop environment.</p>
 
+        <p>
+            Feel free to select another option in the installer if you would like to test out other options, but this tutorial will just cover Gnome.
+        </p>
+
         <h2>Step 1: Boot from the Arch Linux Installation Media</h2>
         <p>Begin by booting your computer from the Arch Linux installation media (Presuming you already have a bootable drive with Arch installed on it). Once booted, you'll be presented with the Arch Linux boot menu.</p>
-        <p>Hit enter to start</p>
+        <img src="img/archstartup.png" alt="">
+        <p>
+            Select Arch Linux install medium and hit Enter.</p>
+
+        <p>
+            If you cant see and the font is too small, try entering this command to switch the font type and size for smaller screens:
+        </p>
+
+        <code>
+            setfont ter-132n
+        </code>
+
+        <p>
+            It should now look something like this:
+        </p>
+        <img src="img/archfont.png" alt="">
 
         <h2>Step 2: Connect to the Internet</h2>
-        <p>Ensure your computer is connected to the internet. You can connect to a Wi-Fi network using the `iwctl` command:</p>
+        <p>Ensure your computer is connected to the internet. You can connect to a Wi-Fi network if you are on a laptop using the `iwctl` command, if you are hard wired, just enter the ping command as shown below:</p>
         <code>
             iwctl<br>
-            station device scan<br>
-            station device get-networks<br>
-            station device connect SSID
         </code>
+
+        <p>
+            The following code scans for wireless devices on your hardware:
+        </p>
+
+        <code>
+            station device scan
+        </code>
+
+        <p>
+            This command will list available networks within range (replace device with your device name, it might be wlan0 or something similar from the code we entered above):
+        </p>
+
+        <code>
+            station device get-networks
+        </code>
+
+        <p>
+            No connect to your network with the following command:
+        </p>
+
+        <code>
+            station wlan0 connect "Your Network Name"
+        </code>
+
+        <p>
+            It should then prompt you for your network password to log in, enter this and you should be connected.
+        </p>
+
+        <p>
+            Now let's double check that it's connected properly, exit out of iwctl by entering:
+        </p>
+
+        <code>
+            exit
+        </code>
+
+        <p>
+            Then run a ping command to test if you are connected to the internet:
+        </p>
+
+        <code>
+            ping google.com 
+        </code>
+
+        <p>
+            You should see it returning responses with <b>0% packet loss</b>, if you see nothing returning, start again with step 1, it may not be connected correctly.
+        </p>
 
         <h2>Step 3: Run Archinstall</h2>
         <p>Once you're connected to the internet, run the `archinstall` script to begin the installation process:</p>
         <code>
             archinstall
         </code>
+
+        <p>
+            You should now see something like this:
+        </p>
+        <img src="img/archinstall.png" alt="">
 
         <p>Follow the prompts to configure your installation. When asked for a desktop environment, choose GNOME.</p>
 
