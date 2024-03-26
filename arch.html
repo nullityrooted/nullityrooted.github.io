@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/arch.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Installing Arch Linux with GNOME</h1>
+        <p>This tutorial will guide you through the process of installing Arch Linux using the `archinstall` script and setting up GNOME as the desktop environment.</p>
+
+        <h2>Step 1: Boot from the Arch Linux Installation Media</h2>
+        <p>Begin by booting your computer from the Arch Linux installation media (Presuming you already have a bootable drive with Arch installed on it). Once booted, you'll be presented with the Arch Linux boot menu.</p>
+        <p>Hit enter to start</p>
+
+        <h2>Step 2: Connect to the Internet</h2>
+        <p>Ensure your computer is connected to the internet. You can connect to a Wi-Fi network using the `iwctl` command:</p>
+        <code>
+            iwctl<br>
+            station device scan<br>
+            station device get-networks<br>
+            station device connect SSID
+        </code>
+
+        <h2>Step 3: Run Archinstall</h2>
+        <p>Once you're connected to the internet, run the `archinstall` script to begin the installation process:</p>
+        <code>
+            archinstall
+        </code>
+
+        <p>Follow the prompts to configure your installation. When asked for a desktop environment, choose GNOME.</p>
+
+        <h2>Step 4: Reboot into Your New System</h2>
+        <p>After the installation is complete, reboot your computer. Remember to remove the installation media so that you boot into your new Arch Linux installation rather than the live environment.</p>
+        <code>
+            reboot
+        </code>
+
+        <h2>Step 5: Log in and Enjoy GNOME</h2>
+        <p>Upon reboot, you should be greeted with the GDM login screen, courtesy of GNOME. Log in using the credentials you set during the installation.</p>
+
+        <h3>Conclusion</h3>
+        <p>Congratulations! You have successfully installed Arch Linux with the GNOME desktop environment using `archinstall`. Enjoy your sleek, new, and customizable Arch Linux setup.</p>
+    </div>
+</body>
+</html>
