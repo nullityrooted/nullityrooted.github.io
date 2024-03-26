@@ -279,14 +279,14 @@ nav ul li a:hover span:after {
 }
 
 .tutorials-list div {
-    color: white;
     background: #262626;
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
     border-radius: 6px;
-    transition: background 0.5s, transform 0.5s;
+    transition: background 0.3s, transform 0.3s;
     box-shadow: 0px 0px 10px #080808;
+    height: 300px;
 }
 
 .tutorials-list div i {
