@@ -28,3 +28,17 @@ body {
             border: 1px solid #ddd;
             overflow-x: auto;
         }
+
+        ::-webkit-scrollbar {
+            width: 5px; /* Width of the scrollbar */
+            height: 5px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background-color: #2B2B2B; /* Background color of the scrollbar track */
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background-color: #FFDA05; /* Color of the scrollbar thumb */
+            border-radius: 0px; /* Border radius of the thumb */
+        }
