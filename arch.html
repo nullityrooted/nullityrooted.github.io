@@ -64,11 +64,11 @@
         </code>
 
         <p>
-            The following code scans for wireless devices on your hardware:
+            The following code scans for wireless devices on your hardware (if your hardware is called wlan0):
         </p>
 
         <code>
-            station device scan
+            station wlan0 scan
         </code>
 
         <p>
@@ -76,7 +76,7 @@
         </p>
 
         <code>
-            station device get-networks
+            station wlan0 get-networks
         </code>
 
         <p>
@@ -124,6 +124,118 @@
 
         <p>Follow the prompts to configure your installation. When asked for a desktop environment, choose GNOME.</p>
 
+        <p>
+            <b>Archinstall language:</b> 
+            <p>
+                Self explanatory.
+            </p>
+        </p>
+
+        <p>
+            <b>Mirrors:</b> 
+            <p>
+                Choose a mirror closest to your location, i.e., Europe/Berlin for instance if you live in Germany. This way you get the fastest mirrors nearest to you for updates etc.
+            </p>
+        </p>
+
+        <p>
+            <b>Locales:</b> 
+            <p>
+                For locales, select the locales you want for your region or layout.
+            </p>
+        </p>
+
+        <p>
+            <b>Disk Configuration:</b> 
+             <p>
+                You can select your main disk if you would like, and can proceed with btrfs, default structure and compression as is.
+             </p>
+            <p>
+                I would also recommend setting up disk <b>encryption</b> with a decently strong password, this way nobody can access the drive should they get ahold of the device.
+            </p>
+        </p>
+
+        <p>
+            <b>Bootloader, Swap</b> and <b>Hostname:</b> 
+            <p>
+                These can be left alone unless you want to modify those or change the system name from the default of archlinux.
+            </p>
+        </p>
+
+        <p>
+            <b>Root Password:</b>
+            <p>
+                Make sure to set a <b>strong</b> user password, not 12345...
+            </p>
+        </p>
+
+        <p>
+            <b>User Account:</b>
+            <p>
+                Set up an account and a password to be able to login to the Gnome desktop environment in this case.
+            </p>
+            <p>
+                If you want your user to be able to run commands as root, select yes for making your user a superuser.
+            </p>
+        </p>
+
+        <p>
+            <b>Profile:</b>
+            <p>
+                This is where you choose your profile type. Desktop, Server, Minimal, or Xorg. We will select Desktop for the purposes of this tutorial.
+            </p>
+        </p>
+        <p>
+            Scroll down to Gnome and hit tab to select it and press Enter.
+        </p>
+        <p>
+            For Graphics Driver, select the relevant option for your device on your laptop.
+        </p>
+        <p>
+            You can leave the Greeter as gdm.
+        </p>
+        
+        <p>
+            <b>Audio:</b>
+            <p>
+                Select pipewire here.
+            </p>
+        </p>
+
+        <p>
+            <b>Network configuration:</b> 
+            <p>
+                Select NetworkManager.
+            </p>
+        </p>
+
+        <p>
+            <b>Timezone:</b>
+            <p>Select a relevant timezone for you, i.e., Europe/Berlin etc.</p>
+        </p>
+
+        <p>
+            <b>Finally:</b> 
+            <p>
+                Navigate down to install at the bottom and hit enter.
+            </p>
+        </p>
+
+        <p>
+            It will ask you if you would like to chroot into the newly installed system, hit no.
+        </p>
+
+        <p>
+            You should see the following screen without any error.
+        </p>
+
+        <img src="img/complete.png" alt="">
+
+
+        <p>
+            Once the installer finishes without any errors, you are done! You should be able to restart the system into your new Arch Linux installation.
+        </p>
+
         <h2>Step 4: Reboot into Your New System</h2>
         <p>After the installation is complete, reboot your computer. Remember to remove the installation media so that you boot into your new Arch Linux installation rather than the live environment.</p>
         <code>
@@ -134,7 +246,7 @@
         <p>Upon reboot, you should be greeted with the GDM login screen, courtesy of GNOME. Log in using the credentials you set during the installation.</p>
 
         <h3>Conclusion</h3>
-        <p>Congratulations! You have successfully installed Arch Linux with the GNOME desktop environment using `archinstall`. Enjoy your sleek, new, and customizable Arch Linux setup.</p>
+        <p>Congratulations! You have successfully installed Arch Linux with the GNOME desktop environment using `archinstall`. I hope this process was easy enough to follow and I hope you enjoyed it! Stay tuned for more tutorials.</p>
     </div>
 </body>
 </html>
