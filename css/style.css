@@ -276,6 +276,7 @@ nav ul li a:hover span:after {
 .tutorials-list a {
     color: gold;
     text-decoration: none;
+    width: 300px;
 }
 
 .tutorials-list div {
