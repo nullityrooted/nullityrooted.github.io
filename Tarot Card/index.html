@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tarot Card Reader</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="card" class="card" onclick="drawCard()">
+            <div id="front" class="front"></div>
+            <div id="back" class="back"></div>
+        </div>
+        <div id="cardInfo" style="display: none;">
+            <div id="cardName" href="#" target="_blank"></div>
+            <div id="cardOrientation"></div>
+            <div id="cardDescription"></div>
+            <div id="learnMore"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
